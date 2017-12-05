@@ -1,0 +1,6 @@
+It's the advent solutions.
+
+Did not include input files, although they are exactly what you would expect
+(text files with the input pasted in).
+
+Most files are meant to be run interactively as a script. `python -i [script]`.
