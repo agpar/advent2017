@@ -1,10 +1,19 @@
 from collections import defaultdict
 
-def is_phrase_valid(phrase):
+def is_phrase_valid2(phrase):
 	words = phrase.split(' ')
 	seen = set()
 	for word in words:
 		if contains_anagram(seen, word):
+			return False
+		seen.add(word)
+	return True
+
+def is_phrase_valid1(phrase):
+	words = phrase.split(' ')
+	seen = set()
+	for word in words:
+		if word in seen:
 			return False
 		seen.add(word)
 	return True
@@ -39,7 +48,7 @@ def count_valid_passphrases(in_text):
 	phrases = in_text.split('\n')
 	count = 0
 	for phrase in phrases:
-		if(is_phrase_valid(phrase)):
+		if(is_phrase_valid2(phrase)):
 			count += 1
 
 	return count

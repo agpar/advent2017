@@ -1,4 +1,12 @@
-def checksum(input_text):
+def checksum1(input_text):
+	matrix = parse_input(input_text)
+	result = 0
+	for row in matrix:
+		larger, smaller = max(row), min(row)
+		result += larger - smaller
+	return result
+
+def checksum2(input_text):
 	matrix = parse_input(input_text)
 	result = 0
 	for row in matrix:
